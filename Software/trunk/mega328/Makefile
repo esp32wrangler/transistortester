@@ -28,7 +28,7 @@ PARTNO = m328p
 # Currently a frequency measurement at ATmega Pin PD4, a frequency generator at TP2 ,
 # the external voltage measurement and C+ESR measurement can be selected. Of course you can also return to
 # the normal transistor tester function and switch off the tester.
-CFLAGS += -DWITH_MENU
+#CFLAGS += -DWITH_MENU
 #
 # For ATmega328 the menu function "rotary encoder check" is only enabled with the WITH_ROTARY_CHECK option.
 #CFLAGS += -DWITH_ROTARY_CHECK
@@ -71,6 +71,9 @@ CFLAGS += -DWITH_MENU
 #                          LANG_ITALIAN,LANG_LITHUANIAN, LANG_POLISH, LANG_RUSSIAN , LANG_SLOVAK, LANG_SLOVENE,
 #                          LANG_SPANISH, LANG_UKRAINIAN
 UI_LANGUAGE = LANG_ENGLISH
+
+#my display can't deal with mu and omega
+CFLAGS += -DLCD_NO_U_OMEGA
 
 # The LCD_CYRILLIC option is necessary, if you have a display with cyrillic characterset.
 # This lcd-display don't have a character for Ohm and for µ (micro).
@@ -233,7 +236,7 @@ CFLAGS += -DC_H_KORR=0
 # You can set WITH_UART to 2 to enable a special mode of serial output with line number in column 1.
 # If the option is deselected, PC3 can be used as external voltage input with a
 # 10:1 resistor divider.
-CFLAGS += -DWITH_UART
+#CFLAGS += -DWITH_UART
 
 # With option TQFP_ADC6 or/and TQFP_ADC7 you can use the additional pins of the TQFP or
 # the QFN package for external analog input. You should install a 10:1 voltage dividers
@@ -246,7 +249,7 @@ CFLAGS += -DWITH_UART
 # is not used for serial output (WITH_UART option).
 # For ATmega644/1284 processor the UART has a separate pin.  Therefore the external input
 # at pin ADC3 can be enabled separate by setting the WITH_UART option.
-#CFLAGS += -DWITH_VEXT
+CFLAGS += -DWITH_VEXT
 
 #
 # If you want to measure Inductors with the resistance meter, you must specify
@@ -330,7 +333,7 @@ CFLAGS += -DBAT_CHECK
 # If your 9V supply has a diode installed, use the BAT_OUT=600 form to specify the
 # threshold voltage of your diode to adjust the output value.
 # This threshold level is added to LCD-output and does not affect the voltage checking levels.
-CFLAGS += -DBAT_OUT=150
+CFLAGS += -DBAT_OUT=303
 
 # To adjust the warning-level and poor-level of battery check to the capability of a
 # low drop voltage regulator, you can specify the Option BAT_POOR=5400 .
