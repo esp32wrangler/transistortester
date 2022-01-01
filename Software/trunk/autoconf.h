@@ -545,7 +545,7 @@
 #define LCD_CHAR_RESIS2 5       // Resistor right part will be generated as custom character
 
 
-#ifdef LCD_CYRILLIC
+#if (defined(LCD_CYRILLIC) || defined(LCD_NO_U_OMEGA)) 
         #define LCD_CHAR_OMEGA  7       // Omega-character cyrillic LCD
         #define LCD_CHAR_U  6           // mu-character cyrillic LCD
 #else

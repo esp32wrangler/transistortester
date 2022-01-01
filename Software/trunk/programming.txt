@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Arduino\hardware\tools\avr\bin\avrdude.exe"  -c stk500v1 -B 5.0  -p m8 -P COM4 -b 19200 -U flash:w:./mega8.hex:a -U eeprom:w:./mega8.eep:a -v -v 
